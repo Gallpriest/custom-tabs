@@ -3,12 +3,18 @@ import * as S from './TabsOverlay.styled';
 import Tab from '../../components/Tab';
 import { useTabContext } from '../../context/TabProvider';
 
-const TabsOverlay = props => {
-    const { tabsNames } = props;
-    const { switchTheme } = useTabContext();
+const TabsOverlay = () => {
+    const { switchTheme, config } = useTabContext();
     const handleTheme = event => switchTheme(event.target.checked ? 'dark' : 'default');
 
-    const TABS = tabsNames.map((name, ix) => <Tab name={name} number={ix} key={ix} />)
+    const TABS = config.map(({ id, name, isActive }) => (
+        <Tab 
+            id={id}
+            isActive={isActive}
+            name={name} 
+            key={id} 
+        />)
+    );
 
     return (
         <S.Overlay>

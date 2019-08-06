@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Tab = styled.div`
     cursor: pointer;
+    position: relative;
     user-select: none;
     min-height: 1.1875rem;
     display: inline-flex;
@@ -11,10 +12,10 @@ export const Tab = styled.div`
     font-size: 1rem;
     line-height: 1;
     padding: 0.6rem 1rem;
-    color: ${({ styles }) => styles.color};
-    border: 1px solid ${({ styles }) => styles.border};
-    background-color: ${({ styles }) => styles.background};
-    transition: all 0.15s ease-in-out;
+    color: ${({ styles, active }) => active ? styles.hoverColor : styles.color};
+    border: 1px solid ${({ styles, active }) => active ? styles.hoverBorder : styles.border};
+    background-color: ${({ styles, active }) => active ? styles.hoverBackground : styles.background};
+    transition: all 0.1s ease-in-out;
 
     &:hover {
         color: ${({ styles }) => styles.hoverColor};

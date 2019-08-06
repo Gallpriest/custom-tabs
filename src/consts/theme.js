@@ -11,8 +11,8 @@ export const SETTINGS = {
         background: '#535c68',
         border: '#535c68',
         color: '#fff',
-        hoverBackground: '#718093',
-        hoverBorder: '#718093',
+        hoverBackground: '#60a3bc',
+        hoverBorder: '#60a3bc',
         hoverColor: '#fff'
     }
 };

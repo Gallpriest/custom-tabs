@@ -3,17 +3,22 @@ import * as S from './Tab.styled';
 import { SETTINGS } from '../../consts/';
 import { useTabContext } from '../../context/TabProvider';
 
-const Tab = props => {
-    const { name, number } = props;
-    const { theme, setActive } = useTabContext();
-    const handleClick = () => setActive(number);
+const Tab = React.memo((props) => {
+    const { name, id, isActive } = props;
+    const { theme, toggleTab } = useTabContext();
+    const handleClick = () => toggleTab(id);
     const styles = SETTINGS[theme];
 
     return (
-        <S.Tab styles={styles}>
+        <S.Tab
+            id={id}
+            active={isActive}
+            styles={styles} 
+            onClick={handleClick}
+        >
             { name }
         </S.Tab>
     );
-};
+});
 
 export default Tab;
