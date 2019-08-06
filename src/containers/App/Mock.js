@@ -1,0 +1,1 @@
+export const TAB_NAMES = ['React', 'Redux', 'Apollo', 'GraphQL'];
