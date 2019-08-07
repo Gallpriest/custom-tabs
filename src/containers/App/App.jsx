@@ -4,6 +4,9 @@ import { TAB_CONFIG } from './Mock';
 import TabProvider from '../../context/TabProvider';
 import TabsOverlay from '../TabsOverlay';
 
+/**
+ * 
+ */
 const App = () => {
   return (
     <S.App>
